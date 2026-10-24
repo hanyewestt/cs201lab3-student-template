@@ -68,13 +68,12 @@ public class Q1Test {
 
     public static String verify(String t1, String t2, String t3) {
 
-        if (t1.length() != t2.length() || t2.length() != t3.length()) {
-            return "Invalid traversals";
-        }
-
         List<Integer> t1list = parseTraversal(t1);
         List<Integer> t2list = parseTraversal(t2);
         List<Integer> t3list = parseTraversal(t3);
+        if (t1list.size() != t2list.size() || t2list.size() != t3list.size()) {
+            return "Invalid traversals";
+        }
 
         List<List<Integer>> allTraversalLists = List.of(t1list, t2list, t3list);
 
@@ -112,7 +111,7 @@ public class Q1Test {
         }
 
         if (tree.postorder().equals(allTraversalLists.get(postorderIdx))
-        && tree.inorder().equals(allTraversalLists.get(inorderIdx))) {
+                && tree.inorder().equals(allTraversalLists.get(inorderIdx))) {
             String[] traversalTypeArray = new String[3];
 
             traversalTypeArray[preorderIdx] = "Preorder";
