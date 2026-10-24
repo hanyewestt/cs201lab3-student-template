@@ -113,17 +113,10 @@ public class Q1Test {
 
         if (tree.postorder().equals(allTraversalLists.get(postorderIdx))) {
             String[] traversalTypeArray = new String[3];
-            for (int i = 0; i < 3; i++) {
-                String type = "";
-                if (i == inorderIdx) {
-                    type = "Inorder";
-                } else if (i == preorderIdx) {
-                    type = "Preorder";
-                } else {
-                    type = "Postorder";
-                }
-                traversalTypeArray[i] = type;
-            }
+
+            traversalTypeArray[preorderIdx] = "Preorder";
+            traversalTypeArray[inorderIdx] = "Inorder";
+            traversalTypeArray[postorderIdx] = "Postorder";
 
             String result = String.format("Traversal 1 - %s, Traversal 2 - %s, Traversal 3 - %s",
                     traversalTypeArray[0],
