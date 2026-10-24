@@ -111,7 +111,8 @@ public class Q1Test {
             tree.insert(e);
         }
 
-        if (tree.postorder().equals(allTraversalLists.get(postorderIdx))) {
+        if (tree.postorder().equals(allTraversalLists.get(postorderIdx))
+        && tree.inorder().equals(allTraversalLists.get(inorderIdx))) {
             String[] traversalTypeArray = new String[3];
 
             traversalTypeArray[preorderIdx] = "Preorder";
